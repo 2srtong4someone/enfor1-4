@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8e7">
+    <meta name="description" content="Engkids — весёлые уроки английского для детей 1–4 классов.">
+    <title>Engkids — английский с Лео</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js', v=4) }}" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Engkids — на главную">
+        <span class="brand-mark" aria-hidden="true">E<span>!</span></span>
+        <span>eng<span class="brand-purple">kids</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Главная навигация">
+        <a class="nav-link" href="#classes">Классы 1–4</a>
+        <a class="nav-lesson" href="#lesson">Урок <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero page-width" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="hello-pill"><span class="sparkle" aria-hidden="true">✦</span> Учимся играя!</div>
+          <h1 id="hero-title">Английский,<br>который <span>понятен</span></h1>
+          <p class="hero-text">Слушай, говори и открывай новое вместе со Львом Лео. Каждый урок — маленькое приключение!</p>
+          <a class="button button-green hero-button" href="#lesson">Начать урок <span aria-hidden="true">→</span></a>
+          <div class="hero-note"><span aria-hidden="true">⭐</span> 10 минут в день — и ты молодец!</div>
+        </div>
+        <div class="hero-art" aria-label="Лео, весёлый лев-помощник" role="img">
+          <span class="sun-spark spark-one" aria-hidden="true">✦</span>
+          <span class="sun-spark spark-two" aria-hidden="true">✧</span>
+          <span class="speech-bubble">Hi, friend! <span aria-hidden="true">👋</span></span>
+          <div class="leo-orbit">
+            <span class="leo-face" aria-hidden="true">🦁</span>
+          </div>
+          <div class="leo-caption"><span class="leo-dot"></span> Это Лео!</div>
+          <span class="floating-star star-left" aria-hidden="true">★</span>
+          <span class="floating-star star-right" aria-hidden="true">★</span>
+        </div>
+      </section>
+
+      <section class="class-section page-width" id="classes" aria-labelledby="class-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Твой уровень</p>
+            <h2 id="class-title">В каком ты классе?</h2>
+          </div>
+          <p class="section-aside">Выбери свой класс — Лео подберёт задания</p>
+        </div>
+        <div class="class-grid" role="group" aria-label="Выбери класс">
+          <button class="class-card class-yellow" type="button" data-grade="1" aria-pressed="true">
+            <span class="class-number">1</span><span class="class-label">класс</span><span class="class-emoji" aria-hidden="true">🌱</span>
+          </button>
+          <button class="class-card class-pink" type="button" data-grade="2" aria-pressed="false">
+            <span class="class-number">2</span><span class="class-label">класс</span><span class="class-emoji" aria-hidden="true">🚀</span>
+          </button>
+          <button class="class-card class-turquoise" type="button" data-grade="3" aria-pressed="false">
+            <span class="class-number">3</span><span class="class-label">класс</span><span class="class-emoji" aria-hidden="true">🧩</span>
+          </button>
+          <button class="class-card class-orange" type="button" data-grade="4" aria-pressed="false">
+            <span class="class-number">4</span><span class="class-label">класс</span><span class="class-emoji" aria-hidden="true">🏆</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="lesson-section page-width" id="lesson" aria-labelledby="lesson-title">
+        <div class="section-heading lesson-heading">
+          <div>
+            <p class="eyebrow">Урок <span id="lesson-grade">1</span> класса · 3 задания</p>
+            <h2 id="lesson-title">Давай знакомиться!</h2>
+          </div>
+          <div class="progress-wrap" aria-label="Прогресс урока">
+            <span id="progress-label">0 из 3 звёзд</span>
+            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity-card activity-word">
+            <div class="activity-topline"><span class="activity-icon" aria-hidden="true">🔊</span><span class="activity-tag">СЛУШАЙ</span></div>
+            <h3 id="word-task-title">Скажи «Привет!»</h3>
+            <p>Нажми на слово и послушай, как его произносит Лео.</p>
+            <button class="word-button" id="word-button" type="button" data-say="Hello">Hello! <span aria-hidden="true">🔈</span></button>
+            <p class="word-translation" id="word-translation">Привет!</p>
+            <button class="button button-small button-purple" id="heard-button" type="button">Послушал! <span aria-hidden="true">✓</span></button>
+          </article>
+
+          <article class="activity-card activity-choose">
+            <div class="activity-topline"><span class="activity-icon" aria-hidden="true">🧠</span><span class="activity-tag">ПОНИМАЙ</span></div>
+            <h3 id="quiz-title">Что значит «Hello»?</h3>
+            <p id="quiz-prompt">Выбери правильный ответ:</p>
+            <div class="answer-list" id="answer-list" role="group" aria-label="Выбери правильный ответ">
+              <button class="answer-button" type="button" data-choice="0">Пока! <span aria-hidden="true">👋</span></button>
+              <button class="answer-button" type="button" data-choice="1">Привет! <span aria-hidden="true">😊</span></button>
+              <button class="answer-button" type="button" data-choice="2">Спасибо! <span aria-hidden="true">💛</span></button>
+            </div>
+            <p class="feedback" id="answer-feedback" aria-live="polite"></p>
+          </article>
+
+          <article class="activity-card activity-speak">
+            <div class="activity-topline"><span class="activity-icon" aria-hidden="true">🎤</span><span class="activity-tag">ГОВОРИ</span></div>
+            <h3 id="speak-task-title">Скажи фразу Лео!</h3>
+            <p>Произнеси вслух: <strong id="speak-phrase">Hello, Leo!</strong></p>
+            <div class="speak-area">
+              <span class="mini-leo" aria-hidden="true">🦁</span>
+              <button class="mic-button" id="speak-button" type="button" aria-label="Включить микрофон для устного задания">🎙️</button>
+            </div>
+            <p class="speech-feedback" id="speech-feedback" aria-live="polite">Нажми на микрофон — он будет слушать до 12 секунд</p>
+            <button class="button button-small button-green" id="said-button" type="button">Я сказал! <span aria-hidden="true">✦</span></button>
+          </article>
+        </div>
+        <p class="privacy-note">Микрофон используется только для этого задания. Можно выполнить его и без микрофона.</p>
+      </section>
+
+      <section class="cheer-section page-width" aria-label="Поддержка от Лео">
+        <div class="cheer-leo" aria-hidden="true">🦁</div>
+        <div><p class="cheer-title">Ошибаться — это нормально!</p><p class="cheer-text">Лео рядом, чтобы помочь. Пробуй ещё раз, и у тебя обязательно получится.</p></div>
+        <span class="cheer-star" aria-hidden="true">✦</span>
+      </section>
+    </main>
+    <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+    <div class="sr-only" id="status-message" aria-live="polite"></div>
+    <footer class="site-footer"><span class="footer-brand">eng<span>kids</span></span><span>Учимся с улыбкой! <span aria-hidden="true">💜</span></span></footer>
+  </body>
+</html>
