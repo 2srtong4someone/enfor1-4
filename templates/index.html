@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/app.js', v=4) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/app.js', v=7) }}" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -21,6 +21,7 @@
       <nav class="main-nav" aria-label="Главная навигация">
         <a class="nav-link" href="#classes">Классы 1–4</a>
         <a class="nav-lesson" href="#lesson">Урок <span aria-hidden="true">↗</span></a>
+        <a class="nav-link" href="#homework">ДЗ / HW</a>
       </nav>
     </header>
 
@@ -117,6 +118,38 @@
           </article>
         </div>
         <p class="privacy-note">Микрофон используется только для этого задания. Можно выполнить его и без микрофона.</p>
+      </section>
+
+      <section class="homework-section page-width" id="homework" aria-labelledby="homework-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Практика · Homework · <span id="homework-level">1 класс / Grade 1</span></p>
+            <h2 id="homework-title">Домашняя работа</h2>
+          </div>
+          <p class="section-aside">Пять вопросов — и Лео проверит ответы!</p>
+        </div>
+        <div class="homework-card">
+          <p class="homework-intro">
+            Прочитай вопрос на английском и русском, выбери ответ — Лео сразу его проверит.
+            <span lang="en">Read each question in English and Russian, then choose an answer for instant feedback.</span>
+          </p>
+          <p class="homework-grading">
+            Оценка: 5 правильных — 5, 4 — 4, 3 — 3, меньше 3 — 2.
+            <span lang="en">Grade: 5 correct = 5, 4 = 4, 3 = 3, fewer than 3 = 2.</span>
+          </p>
+          <form id="homework-form">
+            <ol class="homework-questions" id="homework-questions"></ol>
+            <div class="homework-actions">
+              <button class="button button-purple" id="homework-submit" type="submit" disabled>
+                Проверить ответы <span lang="en">Check answers</span>
+              </button>
+              <p class="homework-hint" id="homework-hint" aria-live="polite">
+                Ответь на все вопросы. <span lang="en">Answer all questions to continue.</span>
+              </p>
+            </div>
+          </form>
+          <section class="homework-result" id="homework-result" aria-live="polite" aria-label="Результат домашней работы"></section>
+        </div>
       </section>
 
       <section class="cheer-section page-width" aria-label="Поддержка от Лео">

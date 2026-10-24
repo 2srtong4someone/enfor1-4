@@ -58,10 +58,41 @@
       keyword: "morning",
     },
   };
-  const defaultProgress = { grade: 1, starsByGrade: {} };
+  const homeworkByGrade = {
+    1: [
+      { promptEn: 'What does "Hello!" mean?', promptRu: 'Что значит «Hello!»?', options: [["Привет!", "Hello!"], ["Пока!", "Goodbye!"], ["Спасибо!", "Thank you!"]], answer: 0, explanationEn: '"Hello!" is a greeting.', explanationRu: '«Hello!» — это приветствие.' },
+      { promptEn: 'How do you say "кошка" in English?', promptRu: 'Как сказать «кошка» по-английски?', options: [["собака", "dog"], ["кошка", "cat"], ["птица", "bird"]], answer: 1, explanationEn: '"Cat" means «кошка».', explanationRu: '«Cat» переводится как «кошка».' },
+      { promptEn: 'What does "goodbye" mean?', promptRu: 'Что значит «goodbye»?', options: [["Доброе утро", "Good morning"], ["Пожалуйста", "Please"], ["Пока", "Goodbye"]], answer: 2, explanationEn: '"Goodbye" is what we say when leaving.', explanationRu: '«Goodbye» говорят при прощании.' },
+      { promptEn: 'Choose the English word for "синий".', promptRu: 'Выбери английское слово для «синий».', options: [["синий", "blue"], ["красный", "red"], ["зелёный", "green"]], answer: 0, explanationEn: '"Blue" means «синий».', explanationRu: '«Blue» переводится как «синий».' },
+      { promptEn: 'What does "thank you" mean?', promptRu: 'Что значит «thank you»?', options: [["Извини", "Sorry"], ["Спасибо", "Thank you"], ["Привет", "Hello"]], answer: 1, explanationEn: '"Thank you" is a polite way to say «спасибо».', explanationRu: '«Thank you» — вежливое «спасибо».' },
+    ],
+    2: [
+      { promptEn: 'What does "I am a student" mean?', promptRu: 'Что значит «I am a student»?', options: [["Я учитель.", "I am a teacher."], ["Я ученик.", "I am a student."], ["Я дома.", "I am at home."]], answer: 1, explanationEn: '"I am a student" means «Я ученик».', explanationRu: '«I am a student» переводится как «Я ученик».' },
+      { promptEn: 'Choose the English word for "собака".', promptRu: 'Выбери английское слово для «собака».', options: [["кошка", "cat"], ["рыба", "fish"], ["собака", "dog"]], answer: 2, explanationEn: '"Dog" means «собака».', explanationRu: '«Dog» переводится как «собака».' },
+      { promptEn: 'What does "red" mean?', promptRu: 'Что значит «red»?', options: [["Красный", "red"], ["Жёлтый", "yellow"], ["Синий", "blue"]], answer: 0, explanationEn: '"Red" is the colour «красный».', explanationRu: '«Red» — это цвет «красный».' },
+      { promptEn: 'How do you say "три" in English?', promptRu: 'Как сказать «три» по-английски?', options: [["два", "two"], ["три", "three"], ["четыре", "four"]], answer: 1, explanationEn: '"Three" means «три».', explanationRu: '«Three» переводится как «три».' },
+      { promptEn: 'When do we say "Good morning"?', promptRu: 'Когда говорят «Good morning»?', options: [["Вечером", "In the evening"], ["Утром", "In the morning"], ["Ночью", "At night"]], answer: 1, explanationEn: '"Good morning" is a greeting we use in the morning.', explanationRu: '«Good morning» — приветствие, которое говорят утром.' },
+    ],
+    3: [
+      { promptEn: 'What does "I like apples" mean?', promptRu: 'Что значит «I like apples»?', options: [["Я люблю яблоки.", "I like apples."], ["Я ем хлеб.", "I eat bread."], ["Я вижу кошку.", "I see a cat."]], answer: 0, explanationEn: '"I like" means «мне нравится», and "apples" means «яблоки».', explanationRu: '«I like» значит «мне нравится», а «apples» — «яблоки».' },
+      { promptEn: 'Choose the English word for "книга".', promptRu: 'Выбери английское слово для «книга».', options: [["ручка", "pen"], ["книга", "book"], ["сумка", "bag"]], answer: 1, explanationEn: '"Book" means «книга».', explanationRu: '«Book» переводится как «книга».' },
+      { promptEn: 'What does "green" mean?', promptRu: 'Что значит «green»?', options: [["Оранжевый", "orange"], ["Фиолетовый", "purple"], ["Зелёный", "green"]], answer: 2, explanationEn: '"Green" is the colour «зелёный».', explanationRu: '«Green» — это цвет «зелёный».' },
+      { promptEn: 'How do you say "семь" in English?', promptRu: 'Как сказать «семь» по-английски?', options: [["семь", "seven"], ["шесть", "six"], ["восемь", "eight"]], answer: 0, explanationEn: '"Seven" means «семь».', explanationRu: '«Seven» переводится как «семь».' },
+      { promptEn: 'What does "How are you?" mean?', promptRu: 'Что значит «How are you?»?', options: [["Как тебя зовут?", "What is your name?"], ["Как дела?", "How are you?"], ["Где ты живёшь?", "Where do you live?"]], answer: 1, explanationEn: '"How are you?" is a question about how someone feels.', explanationRu: '«How are you?» — вопрос о том, как у кого-то дела.' },
+    ],
+    4: [
+      { promptEn: 'What does "She is my friend" mean?', promptRu: 'Что значит «She is my friend»?', options: [["Он мой брат.", "He is my brother."], ["Она моя подруга.", "She is my friend."], ["Это моя книга.", "It is my book."]], answer: 1, explanationEn: '"She" means «она», and "my friend" means «мой друг / моя подруга».', explanationRu: '«She» значит «она», а «my friend» — «мой друг / моя подруга».' },
+      { promptEn: 'What are they doing in "They are playing"?', promptRu: 'Что они делают в предложении «They are playing»?', options: [["Они играют.", "They are playing."], ["Они читают.", "They are reading."], ["Они спят.", "They are sleeping."]], answer: 0, explanationEn: '"They are playing" means «Они играют».', explanationRu: '«They are playing» переводится как «Они играют».' },
+      { promptEn: 'What does "yesterday" mean?', promptRu: 'Что значит «yesterday»?', options: [["Завтра", "tomorrow"], ["Сегодня", "today"], ["Вчера", "yesterday"]], answer: 2, explanationEn: '"Yesterday" means the day before today: «вчера».', explanationRu: '«Yesterday» значит день перед сегодняшним: «вчера».' },
+      { promptEn: 'What does "Where do you live?" mean?', promptRu: 'Что значит «Where do you live?»?', options: [["Где ты живёшь?", "Where do you live?"], ["Что ты любишь?", "What do you like?"], ["Сколько тебе лет?", "How old are you?"]], answer: 0, explanationEn: 'We ask "Where do you live?" to find out someone’s home or town.', explanationRu: 'Вопрос «Where do you live?» задают, чтобы узнать, где человек живёт.' },
+      { promptEn: 'Choose the correct translation of "We have a dog".', promptRu: 'Выбери правильный перевод «We have a dog».', options: [["У нас есть собака.", "We have a dog."], ["У них есть кошка.", "They have a cat."], ["У меня есть птица.", "I have a bird."]], answer: 0, explanationEn: '"We have" means «у нас есть», and "a dog" means «собака».', explanationRu: '«We have» значит «у нас есть», а «a dog» — «собака».' },
+    ],
+  };
+  const defaultProgress = { grade: 1, starsByGrade: {}, homeworkResults: {} };
   const colors = ["#ffd43b", "#ff5fa2", "#19c8c0", "#8cf06e", "#7b5cff", "#ff8a3d"];
   const statusMessage = document.querySelector("#status-message");
   let progress = loadProgress();
+  const reviewedHomeworkGrades = new Set();
 
   function loadProgress() {
     try {
@@ -75,9 +106,23 @@
             .filter((star) => ["heard", "answer", "speak"].includes(star)),
         )];
       }
+      const homeworkResults = {};
+      for (const grade of [1, 2, 3, 4]) {
+        const savedAnswers = saved.homeworkResults?.[grade]?.answers;
+        if (
+          Array.isArray(savedAnswers)
+          && savedAnswers.length === homeworkByGrade[grade].length
+          && savedAnswers.every((answer, index) => Number.isInteger(answer)
+            && answer >= 0
+            && answer < homeworkByGrade[grade][index].options.length)
+        ) {
+          homeworkResults[grade] = { answers: savedAnswers };
+        }
+      }
       return {
         grade: Number.isInteger(saved.grade) && saved.grade >= 1 && saved.grade <= 4 ? saved.grade : 1,
         starsByGrade,
+        homeworkResults,
       };
     } catch (error) {
       console.warn("Не удалось прочитать прогресс Engkids из хранилища браузера.", error);
@@ -143,7 +188,119 @@
       button.querySelector("span").textContent = lesson.answerEmoji[index];
       button.hidden = index >= lesson.answers.length;
     });
+    renderHomework();
     updateProgress();
+  }
+
+  function createTextElement(tagName, className, text) {
+    const element = document.createElement(tagName);
+    if (className) element.className = className;
+    element.textContent = text;
+    return element;
+  }
+
+  function createHomeworkFeedback(question, selectedAnswer) {
+    const correctOption = question.options[question.answer];
+    const isCorrect = selectedAnswer === question.answer;
+    const feedback = document.createElement("div");
+    feedback.className = `homework-answer-feedback ${isCorrect ? "is-correct" : "is-wrong"}`;
+    feedback.setAttribute("role", "status");
+    feedback.append(
+      createTextElement(
+        "p",
+        "homework-answer-result",
+        isCorrect
+          ? `Верно! Ответ: ${correctOption[0]} / Correct! Answer: ${correctOption[1]}`
+          : `Неверно. Правильный ответ: ${correctOption[0]} / Not quite. Correct answer: ${correctOption[1]}`,
+      ),
+      createTextElement("p", "homework-explanation-en", question.explanationEn),
+      createTextElement("p", "homework-explanation-ru", question.explanationRu),
+    );
+    return feedback;
+  }
+
+  function renderHomework() {
+    const questions = homeworkByGrade[progress.grade];
+    const savedResult = progress.homeworkResults[progress.grade];
+    const showSavedAnswers = Boolean(savedResult && reviewedHomeworkGrades.has(progress.grade));
+    document.querySelector("#homework-level").textContent = `${progress.grade} класс / Grade ${progress.grade}`;
+    const list = document.querySelector("#homework-questions");
+    const submitButton = document.querySelector("#homework-submit");
+    const hint = document.querySelector("#homework-hint");
+    const result = document.querySelector("#homework-result");
+    list.replaceChildren();
+    result.replaceChildren();
+
+    questions.forEach((question, questionIndex) => {
+      const item = document.createElement("li");
+      item.className = "homework-question";
+      const selectedAnswer = showSavedAnswers ? savedResult.answers[questionIndex] : null;
+      const prompt = createTextElement("h3", "homework-prompt", `${questionIndex + 1}. ${question.promptEn}`);
+      prompt.lang = "en";
+      item.append(prompt, createTextElement("p", "homework-translation", question.promptRu));
+
+      const options = document.createElement("div");
+      options.className = "homework-options";
+      options.setAttribute("role", "radiogroup");
+      options.setAttribute("aria-label", `${question.promptEn} / ${question.promptRu}`);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "homework-option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `homework-${progress.grade}-${questionIndex}`;
+        input.value = String(optionIndex);
+        input.checked = selectedAnswer === optionIndex;
+        input.disabled = showSavedAnswers;
+        const text = document.createElement("span");
+        text.append(
+          createTextElement("span", "homework-option-en", option[1]),
+          createTextElement("span", "homework-option-ru", option[0]),
+        );
+        if (selectedAnswer !== null) {
+          if (optionIndex === question.answer) label.classList.add("is-correct");
+          if (selectedAnswer === optionIndex && selectedAnswer !== question.answer) {
+            label.classList.add("is-wrong");
+          }
+        }
+        label.append(input, text);
+        options.append(label);
+      });
+      item.append(options);
+      if (selectedAnswer !== null) item.append(createHomeworkFeedback(question, selectedAnswer));
+      list.append(item);
+    });
+
+    if (savedResult) {
+      const score = savedResult.answers.reduce(
+        (total, answer, index) => total + Number(answer === questions[index].answer),
+        0,
+      );
+      const grade = score >= 5 ? 5 : score >= 4 ? 4 : score >= 3 ? 3 : 2;
+      const outcome = grade === 5
+        ? ["Отлично!", "Excellent!"]
+        : grade === 4
+          ? ["Хорошая работа!", "Good work!"]
+          : grade === 3
+            ? ["Неплохо! Продолжай тренироваться.", "Not bad! Keep practising."]
+            : ["Повтори слова и попробуй ещё раз.", "Review the words and try again."];
+      const scoreLine = createTextElement("p", "homework-score", `${score} / ${questions.length}`);
+      const gradeLine = createTextElement("p", "homework-grade", `Оценка: ${grade} / 5 · ${outcome[0]}  |  Grade: ${grade} / 5 · ${outcome[1]}`);
+      result.append(scoreLine, gradeLine);
+      hint.textContent = showSavedAnswers
+        ? "Посмотри объяснения к ответам. / Review the explanations for each answer."
+        : "Выбери ответы, чтобы начать новую попытку. / Select answers to start a new attempt.";
+      submitButton.disabled = false;
+      submitButton.innerHTML = showSavedAnswers
+        ? "Попробовать ещё раз <span lang=\"en\">Try again</span>"
+        : "Новая попытка <span lang=\"en\">New attempt</span>";
+      submitButton.dataset.retry = "true";
+    } else {
+      hint.textContent = "Ответь на все вопросы. / Answer all questions to continue.";
+      submitButton.disabled = true;
+      submitButton.innerHTML = "Проверить ответы <span lang=\"en\">Check answers</span>";
+      delete submitButton.dataset.retry;
+    }
   }
 
   function celebrate() {
@@ -179,6 +336,70 @@
       updateLesson();
       statusMessage.textContent = `Выбран ${progress.grade} класс.`;
     });
+  });
+
+  document.querySelector("#homework-questions").addEventListener("change", (event) => {
+    const selectedInput = event.target.closest('input[type="radio"]');
+    if (selectedInput) {
+      if (progress.homeworkResults[progress.grade]) {
+        delete progress.homeworkResults[progress.grade];
+        reviewedHomeworkGrades.delete(progress.grade);
+        saveProgress();
+        document.querySelector("#homework-result").replaceChildren();
+      }
+      const submitButton = document.querySelector("#homework-submit");
+      delete submitButton.dataset.retry;
+      submitButton.innerHTML = "Проверить ответы <span lang=\"en\">Check answers</span>";
+      const questionIndex = Number(selectedInput.name.split("-").at(-1));
+      const question = homeworkByGrade[progress.grade][questionIndex];
+      const item = selectedInput.closest(".homework-question");
+      item.querySelectorAll(".homework-option").forEach((option, optionIndex) => {
+        option.classList.toggle("is-correct", optionIndex === question.answer);
+        option.classList.toggle(
+          "is-wrong",
+          optionIndex === Number(selectedInput.value) && Number(selectedInput.value) !== question.answer,
+        );
+      });
+      item.querySelector(".homework-answer-feedback")?.remove();
+      item.append(createHomeworkFeedback(question, Number(selectedInput.value)));
+    }
+    const questionCount = homeworkByGrade[progress.grade].length;
+    const answeredCount = document.querySelectorAll("#homework-questions input:checked").length;
+    document.querySelector("#homework-submit").disabled = answeredCount !== questionCount;
+    document.querySelector("#homework-hint").textContent = answeredCount === questionCount
+      ? "Готово? Проверь ответы! / Ready? Check your answers!"
+      : `Отвечено: ${answeredCount} из ${questionCount}. / Answered: ${answeredCount} of ${questionCount}.`;
+  });
+
+  document.querySelector("#homework-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const submitButton = document.querySelector("#homework-submit");
+    if (submitButton.dataset.retry === "true") {
+      delete progress.homeworkResults[progress.grade];
+      reviewedHomeworkGrades.delete(progress.grade);
+      saveProgress();
+      renderHomework();
+      return;
+    }
+    const questions = homeworkByGrade[progress.grade];
+    const answers = questions.map((_, index) => {
+      const selected = document.querySelector(`input[name="homework-${progress.grade}-${index}"]:checked`);
+      return selected ? Number(selected.value) : -1;
+    });
+    if (answers.some((answer) => answer < 0)) {
+      document.querySelector("#homework-hint").textContent = "Ответь на все вопросы перед проверкой. / Answer every question before checking.";
+      return;
+    }
+    progress.homeworkResults[progress.grade] = { answers };
+    reviewedHomeworkGrades.add(progress.grade);
+    saveProgress();
+    renderHomework();
+    const score = answers.reduce(
+      (total, answer, index) => total + Number(answer === questions[index].answer),
+      0,
+    );
+    statusMessage.textContent = `Домашняя работа проверена. Результат: ${score} из ${questions.length}. / Homework checked: ${score} out of ${questions.length}.`;
+    if (score === questions.length) celebrate();
   });
 
   document.querySelector("#word-button").addEventListener("click", () => {
